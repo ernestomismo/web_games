@@ -6,6 +6,7 @@ let userChoice
 let computerChoice
 
 posibleChoices.forEach(posibleChoice => posibleChoice.addEventListener("click", (e) => {
+    resultDisplay.innerHTML = ""
     userChoice = e.target.id
     userChoiceDisplay.innerHTML = userChoice
     generateComputerChoice()
@@ -28,9 +29,11 @@ function generateComputerChoice(){
 }
 
 function getResult(){
+    console.log("user choice: " + userChoice + " computer choice: " + computerChoice)
     if(computerChoice === userChoice){
         result = "Es un empate!!!"
     }else{
-        resultDisplay.innerHTML = "Vete con tu puta madre!!!"
+        result = "Vete con tu puta madre!!!"
     }
+    resultDisplay.innerHTML = result
 }
